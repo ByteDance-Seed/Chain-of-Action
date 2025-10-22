@@ -6,9 +6,6 @@
   <a href="https://chain-of-action.github.io/"><img src="https://img.shields.io/badge/Website-Visit-0A66C2?logo=safari&logoColor=white" alt="Website" /></a> <a href="https://arxiv.org/pdf/2506.09990"><img src="https://img.shields.io/badge/Paper-arXiv-red?logo=arxiv&logoColor=red" alt="Paper on arXiv" /></a> <a href="https://huggingface.co/Solomonz/Chain-of-Action"><img src="https://img.shields.io/badge/HuggingFace-Model-yellow?logo=huggingface&logoColor=yellow" alt="HuggingFace Model" /></a> <a href="https://huggingface.co/datasets/Solomonz/Chain-of-Action"><img src="https://img.shields.io/badge/HuggingFace-Data-blue?logo=huggingface&logoColor=blue" alt="HuggingFace Dataset" /></a>
 </p>
 
-## Project Overview
-This repository offers the official implementation of Chain-of-Action on RLBench. The framework aims to integrate representative visuomotor policies, including the [ACT](https://github.com/tonyzhaozh/act) and [Diffusion Policy](https://github.com/real-stanford/diffusion_policy) (To-do soon), with standardized training and evaluation protocols to facilitate fair comparison and reproducibility for the community.
-
 ## Quick start
 ### Set up environment
   
@@ -101,6 +98,10 @@ You can customize these parameters by editing `src/cfgs/launch.yaml` directly, o
 - `README.md`：Project documentation
 
 
+## Acknowledgement
+
+This repository is built upon the robobase framework.
+The reproduced results of ACT and Diffusion Policy (DP) are based on the implementations provided in that repository.
 
 ## Citation
 ```bibtex
