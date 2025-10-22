@@ -100,7 +100,7 @@ You can customize these parameters by editing `src/cfgs/launch.yaml` directly, o
 
 ## Acknowledgement
 
-This repository is built upon the robobase framework.
+This repository is built upon the [robobase](https://github.com/robobase-org/robobase) framework.
 The reproduced results of ACT and Diffusion Policy (DP) are based on the implementations provided in that repository.
 
 ## Citation
