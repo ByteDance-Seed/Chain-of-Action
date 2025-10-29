@@ -34,8 +34,7 @@ def extract_many_from_batch(batch, pattern: str):
     return filtered_dict
 
 def flatten_time_dim_into_channel_dim(
-    tensor: torch.Tensor, has_view_axis: bool = False
-):
+    tensor: torch.Tensor, has_view_axis: bool = True):
     if has_view_axis:
         bs, v, t, ch = tensor.shape[:4]
         return tensor.view(bs, v, t * ch, *tensor.shape[4:])
