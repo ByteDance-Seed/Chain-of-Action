@@ -138,10 +138,10 @@ The reproduced results of ACT and Diffusion Policy (DP) are based on the impleme
 ## Citation
 ```bibtex
 @inproceedings{zhang2025chainofaction,
-  author={Zhang, Wenbo and Hu, Tianrun and Qiao, Yanyuan and Zhang, Hanbo and Qin, Yuchu and Li, Yang and Liu, Jiajun and Kong, Tao and Liu, Lingqiao and Ma, Xiao},
-  title={Chain-of-Action: Trajectory Autoregressive Modeling for Robotic Manipulation},
-  journal= {arxiv},
-  year={2025},
+  author    = {Zhang, Wenbo and Hu, Tianrun and Zhang, Hanbo and Qiao, Yanyuan and Qin, Yuchu and Li, Yang and Liu, Jiajun and Kong, Tao and Liu, Lingqiao and Ma, Xiao},
+  title     = {Chain-of-Action: Trajectory Autoregressive Modeling for Robotic Manipulation},
+  booktitle = {Proceedings of the 39th Annual Conference on Neural Information Processing Systems (NeurIPS)},
+  year      = {2025},
 }
 ```
 
