@@ -98,6 +98,38 @@ You can customize these parameters by editing `src/cfgs/launch.yaml` directly, o
 - `README.md`：Project documentation
 
 
+## Note on Open-Source Implementation
+
+The open-source implementation slightly differs from the original version reported in the paper. We reconstructed the entire training and evaluation pipeline for better clarity and reproducibility.
+
+During this process, a few settings were adjusted:
+
+- Both the **latent loss** and **action loss** were changed from **L2** to **L1**.  
+- The **multi-token prediction head** was reduced from **5 tokens** to **2 tokens**.
+
+These updates generally lead to improved success rates across most tasks.  
+As a result, your observed performance (e.g., **100% on “push button”**) may exceed the numbers reported in the paper.
+
+### Updated Results (Open-Source Version)
+
+For reference, below are the task-level success rates of the open-source implementation compared with those reported in the paper.  
+The open-source version generally achieves higher performance due to the modified training configuration.
+
+| Task | Paper (CoA) | Open-Source (Updated) |
+|------|--------------|----------------------|
+| Stack Wine | 0.80 | 0.76 |
+| Turn Tap | 0.56 | **0.72** |
+| Open Drawer | 0.88 | **0.96** |
+| Push Button | 0.76 | **1.00** |
+| Pick Up Cup | 0.80 | **0.92** |
+| Take Lid | 0.80 | **0.92** |
+| Press Switch | 0.44 | **0.52** |
+| Reach Target | 0.84 | 0.72 |
+| Sweep Dust | 0.92 | **0.96** |
+| Open Box | 0.76 | **0.96** |
+| `Average` | `0.756` | `0.844` |
+
+
 ## Acknowledgement
 
 This repository is built upon the [robobase](https://github.com/robobase-org/robobase) framework.
