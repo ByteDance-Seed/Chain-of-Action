@@ -115,7 +115,7 @@ As a result, your observed performance (e.g., **100% on “push button”**) may
 For reference, below are the task-level success rates of the open-source implementation compared with those reported in the paper.  
 The open-source version generally achieves higher performance due to the modified training configuration.
 
-| Task | Paper (CoA) | Open-Source (Updated) |
+| Task | Paper version | Open-Source version |
 |------|--------------|----------------------|
 | Stack Wine | 0.80 | 0.76 |
 | Turn Tap | 0.56 | **0.72** |
