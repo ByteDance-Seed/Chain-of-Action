@@ -110,7 +110,22 @@ During this process, a few settings were adjusted:
 These updates generally lead to improved success rates across most tasks.  
 As a result, your observed performance (e.g., **100% on “push button”**) may exceed the numbers reported in the paper.
 
-### Updated Results (Open-Source Version)
+## Experiments Results
+
+### Evluation over 60 RLBench tasks
+Why we use 60 tasks for the main evaluation?
+Although the 18 RLBench tasks have been widely adopted as a benchmark since their introduction in Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation, they are primarily used to evaluate 3D-based hierarchical policies that depend heavily on high-precision 3D inputs and motion planners. Many of these tasks are extremely challenging for RGB-only visuomotor policies, often leading to uniformly low success rates and therefore limited discriminative power.`
+
+<img width="1105" height="473" alt="coa_performance" src="https://github.com/user-attachments/assets/b4408c9d-311b-4c42-9cdb-74decfdb91ef" />
+
+
+### Evluation over 18 RLBench tasks
+
+To enable convenient comparison with 3D-based hierarchical methods—such as RVT-2, we also report results on the RLBench-18 benchmark. Plase check appendix for more details.
+
+<img width="706" height="431" alt="coa_rlbench18" src="https://github.com/user-attachments/assets/3b698819-fd0a-4e6e-979e-f64ec108df52" />
+
+## Updated Results (Open-Source Version)
 
 For reference, below are the task-level success rates of the open-source implementation compared with those reported in the paper.  
 The open-source version generally achieves higher performance due to the modified training configuration.
