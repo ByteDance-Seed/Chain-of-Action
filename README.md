@@ -101,14 +101,20 @@ You can customize these parameters by editing `src/cfgs/launch.yaml` directly, o
 
 ### Evluation over 60 RLBench tasks
 Why we use 60 tasks for the main evaluation?
-Although the 18 RLBench tasks have been widely adopted as a benchmark since their introduction in Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation, they are primarily used to evaluate 3D-based hierarchical policies that depend heavily on high-precision 3D inputs and motion planners. Many of these tasks are extremely challenging for RGB-only visuomotor policies, often leading to uniformly low success rates and therefore limited discriminative power.
+Although the 18 RLBench tasks have been widely adopted as a benchmark since their introduction in “Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation”, they are primarily used to evaluate 3D-based hierarchical policies that depend heavily on high-precision 3D inputs and motion planners. Many of these tasks are extremely challenging for RGB-only visuomotor policies, often leading to uniformly low success rates and therefore limited discriminative power.
 
 <img width="1105" height="473" alt="coa_performance" src="https://github.com/user-attachments/assets/b4408c9d-311b-4c42-9cdb-74decfdb91ef" />
 
 
 ### Evluation over 18 RLBench tasks
 
-To enable convenient comparison with 3D-based hierarchical methods—such as RVT-2, we also report results on the RLBench-18 benchmark. Plase check appendix for more details. As you can see, there is still substantial room for RGB-only visuomotor policies to close the performance gap.
+To enable convenient comparison with 3D-based hierarchical methods—such as RVT-2, we also report results on the RLBench-18 benchmark. Plase check appendix for more details. 
+
+> Somehow, RLBench (the most popular 3D-policy benchmark) has gained significant traction in VLA benchmarking, yet VLAs remain far from matching 3D SOTA methods such as 3DDA. For various reasons, most VLA policies tend to avoid comparing against all relevant 3D baselines.
+>
+> — Source: [A Practitioner’s Guide to VLA Evaluation](https://mbreuss.github.io/blog_post_iclr_26_vla.html#practitioners-guide)
+
+As you can see, there is still substantial room for RGB-only visuomotor policies to close the performance gap.
 
 <img width="706" height="431" alt="coa_rlbench18" src="https://github.com/user-attachments/assets/3b698819-fd0a-4e6e-979e-f64ec108df52" />
 
