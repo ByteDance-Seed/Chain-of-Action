@@ -26,6 +26,28 @@ The script will automatically download the required pretrained snapshot and the 
 bash scripts/eval.sh task=push_button
 ```
 
+## Experiments Results
+
+### Evluation over 60 RLBench tasks
+Why we use 60 tasks for the main evaluation?
+Although the 18 RLBench tasks have been widely adopted as a benchmark since their introduction in “Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation”, they are primarily used to evaluate 3D-based hierarchical policies that depend heavily on high-precision 3D inputs and motion planners. Many of these tasks are extremely challenging for RGB-only visuomotor policies, often leading to uniformly low success rates and therefore limited discriminative power.
+
+<img width="1105" height="473" alt="coa_performance" src="https://github.com/user-attachments/assets/b4408c9d-311b-4c42-9cdb-74decfdb91ef" />
+
+
+### Evluation over 18 RLBench tasks
+
+To enable convenient comparison with 3D-based hierarchical methods—such as RVT-2, we also report results on the RLBench-18 benchmark. Plase check appendix for more details. 
+
+> Somehow, RLBench (the most popular 3D-policy benchmark) has gained significant traction in VLA benchmarking, yet VLAs remain far from matching 3D SOTA methods such as 3DDA. For various reasons, most VLA policies tend to avoid comparing against all relevant 3D baselines.
+>
+> — Source: [A Practitioner’s Guide to VLA Evaluation](https://mbreuss.github.io/blog_post_iclr_26_vla.html#practitioners-guide)
+
+As you can see, there is still substantial room for RGB-only visuomotor policies to close the performance gap.
+
+<img width="706" height="431" alt="coa_rlbench18" src="https://github.com/user-attachments/assets/3b698819-fd0a-4e6e-979e-f64ec108df52" />
+
+
 ## Train & Eval
 ### Download RLBench datasets
 
@@ -75,49 +97,6 @@ Key parameters include:
 
 You can customize these parameters by editing `src/cfgs/launch.yaml` directly, or override them via command line arguments (e.g., `python scripts/train.py task=push_button batch_size=64`).
 
-## Directory Structure
-- `scripts/`：Training, evaluation, data/snapshot downloading scripts
-
-- `src/`: Main source code directory, including the following subfolders and files:
-  - `cfgs/`: Configuration files
-  - `dataset/`: Dataset loading and preprocessing 
-  - `envs/`: Simulation environment 
-  - `methods/`: Algorithm implementations
-    - `coa/`: Chain-of-Action
-    - `act/`: ACT (To-do)
-    - `dp/`: Diffusion policy (To-do)
-    - `base.py`, `utils.py`: Common base classes and utilities
-  - `utils.py`, `logger.py`, `video.py`, : General utilities and main control scripts
-  - `workspace.py`: training workflow
-
-- `exp_local/`: Local experiment results.
-  - `checkpoints/`: Model weights
-  - `eval_videos/`: Evaluation videos
-  - `train.log`: Training log
-  - `.hydra/`: Configuration snapshots and Hydra management files
-- `README.md`：Project documentation
-
-## Experiments Results
-
-### Evluation over 60 RLBench tasks
-Why we use 60 tasks for the main evaluation?
-Although the 18 RLBench tasks have been widely adopted as a benchmark since their introduction in “Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation”, they are primarily used to evaluate 3D-based hierarchical policies that depend heavily on high-precision 3D inputs and motion planners. Many of these tasks are extremely challenging for RGB-only visuomotor policies, often leading to uniformly low success rates and therefore limited discriminative power.
-
-<img width="1105" height="473" alt="coa_performance" src="https://github.com/user-attachments/assets/b4408c9d-311b-4c42-9cdb-74decfdb91ef" />
-
-
-### Evluation over 18 RLBench tasks
-
-To enable convenient comparison with 3D-based hierarchical methods—such as RVT-2, we also report results on the RLBench-18 benchmark. Plase check appendix for more details. 
-
-> Somehow, RLBench (the most popular 3D-policy benchmark) has gained significant traction in VLA benchmarking, yet VLAs remain far from matching 3D SOTA methods such as 3DDA. For various reasons, most VLA policies tend to avoid comparing against all relevant 3D baselines.
->
-> — Source: [A Practitioner’s Guide to VLA Evaluation](https://mbreuss.github.io/blog_post_iclr_26_vla.html#practitioners-guide)
-
-As you can see, there is still substantial room for RGB-only visuomotor policies to close the performance gap.
-
-<img width="706" height="431" alt="coa_rlbench18" src="https://github.com/user-attachments/assets/3b698819-fd0a-4e6e-979e-f64ec108df52" />
-
 ## Note on Open-Source Implementation
 
 The open-source implementation slightly differs from the original version reported in the paper. We reconstructed the entire training and evaluation pipeline for better clarity and reproducibility.
@@ -149,6 +128,27 @@ The open-source version generally achieves higher performance due to the modifie
 | Open Box | 0.76 | **0.96** |
 | `Average` | `0.756` | `0.844` |
 
+## Directory Structure
+- `scripts/`：Training, evaluation, data/snapshot downloading scripts
+
+- `src/`: Main source code directory, including the following subfolders and files:
+  - `cfgs/`: Configuration files
+  - `dataset/`: Dataset loading and preprocessing 
+  - `envs/`: Simulation environment 
+  - `methods/`: Algorithm implementations
+    - `coa/`: Chain-of-Action
+    - `act/`: ACT (To-do)
+    - `dp/`: Diffusion policy (To-do)
+    - `base.py`, `utils.py`: Common base classes and utilities
+  - `utils.py`, `logger.py`, `video.py`, : General utilities and main control scripts
+  - `workspace.py`: training workflow
+
+- `exp_local/`: Local experiment results.
+  - `checkpoints/`: Model weights
+  - `eval_videos/`: Evaluation videos
+  - `train.log`: Training log
+  - `.hydra/`: Configuration snapshots and Hydra management files
+- `README.md`：Project documentation
 
 ## Acknowledgement
 
